@@ -44,4 +44,91 @@ let dogs = [
     "Ringo": "Doberman",
     "Thor": "Corgi",
 ]
-print((dogs))
+//print(dogs)
+// End simples values
+
+// Begin Control flow (conditionals and loops)
+let individualScore = [75, 43, 103, 87, 12]
+var teamScore = 0
+
+for score in individualScore {
+    if score > 50 {
+        teamScore += 3
+    } else {
+        teamScore += 1
+    }
+}
+
+print(teamScore)
+
+var optionalString: String? = "Hello"
+print(optionalString == nil) //nil = null p/ JS
+
+var optionalName: String? = "John Appleseed"
+var greeting = "Hello!"
+if let name = optionalName{
+    greeting = "Hello, \(name)"
+}
+print(greeting)
+
+let nickName: String? = nil
+let fullName: String = "John Doe"
+let informalGreeting = "Hi, \(nickName ?? fullName)"
+
+print(informalGreeting)
+
+let vegetable = "red pepper"
+switch vegetable {
+case "celery":
+    print("Add some raisins")
+case "cucumber", "watercress":
+    print("That makes a good sandwich")
+case let x where x.hasSuffix("pepper"):
+    print("it is a spicy \(x)")
+default:
+    print("Everything tastes good")
+}
+
+let interestingNumbers = [
+    "Prime": [2, 3, 5, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25]
+]
+
+var largest = 0
+var key = ""
+for (_key, numbers) in interestingNumbers {
+    for number in numbers {
+        if number > largest {
+            largest = number
+            key = _key
+        }
+    }
+}
+
+print(largest, key)
+
+var n = 2
+
+while n < 100 {
+    n *= 2
+}
+print(n)
+
+var m = 2
+repeat {
+    m*=2
+} while m < 100
+print(m)
+
+var total = 0
+for i in 0..<4 {
+    total += i
+}
+print(total)
+
+var newTotal = 0
+for i in 0...4 {
+    newTotal += i
+}
+print(newTotal)
